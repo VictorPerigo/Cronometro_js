@@ -1,0 +1,12 @@
+.cont{
+    text-align: center;
+
+}
+button{
+    background: #069;
+    color: white;
+    font-size: 20px;
+    padding: 8px 20px ;
+    cursor: pointer;
+    border: 0;
+}
