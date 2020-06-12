@@ -1,5 +1,8 @@
 .cont{
     text-align: center;
+    background: rgb(30, 44, 88);
+    padding: 5px 50px 5px 50px;
+    margin: 50px;
 
 }
 button{

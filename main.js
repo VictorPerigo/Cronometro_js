@@ -3,11 +3,14 @@ var display = document.getElementById('display');
 var minutos = document.getElementById('minutos');
 var segundos = document.getElementById('segundos');
 
-var começar = document.getElementById('começar');
+var começar = document.getElementById('cronometro');
+var temporizador = document.getElementById('temporizador');
 
-var cronometroseg;
 var minutoatual;
 var segundoatual;
+
+var minutodesejado;
+var segundodesejado;
 
 var interval;
 
@@ -38,4 +41,30 @@ começar.addEventListener('click',function(){
         }
         display.childNodes[1].innerHTML = minutoatual + ":"+segundoatual;
     },1000);
-})
+});
+
+ temporizador.addEventListener('click',function(){
+    var minutoatual = 0;
+    var segundoatual = 0;
+    var minutodesejado = minutos.value;
+    var segundodesejado = segundos.value
+    display.childNodes[1].innerHTML = minutoatual +':'+segundoatual;
+ 
+interval = setInterval(function(){
+    if(segundoatual!==segundodesejado){
+    if(minutoatual!==minutodesejado){
+        segundoatual++;}}
+        if(segundoatual >=59 ){
+           minutoatual++;
+            segundoatual = 0;
+
+        }else if(minutoatual==minutodesejado && segundoatual==segundodesejado){
+                clearInterval(interval);
+                document.getElementById("sound").play();
+
+            }
+        
+        display.childNodes[1].innerHTML = minutoatual + ":"+segundoatual;
+    },1000);
+
+});
